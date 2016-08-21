@@ -616,7 +616,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="lbPlacaSaida1" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="txSaidaPlaca1" max="32767" attributes="0"/>
+                                      <Component id="txSaidaPlacaMoto" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
@@ -641,7 +641,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lbPlacaSaida1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txSaidaPlaca1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txSaidaPlacaMoto" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -670,10 +670,13 @@
                 <Property name="text" type="java.lang.String" value="Placa:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txSaidaPlaca1">
+            <Component class="javax.swing.JTextField" name="txSaidaPlacaMoto">
               <Properties>
                 <Property name="text" type="java.lang.String" value="ABC-1234"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txSaidaPlacaMotoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnSaidaCancelarMoto">
               <Properties>
@@ -687,6 +690,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="CONFIRMAR"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaidaVeiculoMotoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator9">
             </Component>
@@ -736,7 +742,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="lbPlacaSaida2" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="txSaidaPlaca2" max="32767" attributes="0"/>
+                                      <Component id="txSaidaPlacaEspecial" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
@@ -761,7 +767,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lbPlacaSaida2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txSaidaPlaca2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txSaidaPlacaEspecial" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -790,7 +796,7 @@
                 <Property name="text" type="java.lang.String" value="Placa:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txSaidaPlaca2">
+            <Component class="javax.swing.JTextField" name="txSaidaPlacaEspecial">
               <Properties>
                 <Property name="text" type="java.lang.String" value="ABC-1234"/>
               </Properties>
@@ -807,6 +813,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="CONFIRMAR"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaidaVeiculo2ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator10">
             </Component>

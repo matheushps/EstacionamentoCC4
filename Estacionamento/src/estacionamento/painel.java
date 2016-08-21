@@ -1,13 +1,14 @@
 package estacionamento;
 
 import java.awt.Dimension;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class painel extends javax.swing.JFrame {
 
-    String vagasEstacionamentoCarro[][] = new String[90][2];
-    String vagasEstacionamentoMoto[][] = new String[30][2];
-    String vagasEstacionamentoEspecial[][] = new String[9][2];
+    ArrayList<String> vagaCarro = new ArrayList<>();
+    ArrayList<String> vagaMoto = new ArrayList<>();
+    ArrayList<String> vagaEspecial = new ArrayList<>();
 
     int QtdVagaCarro = 0;
     int QtdVagaMoto = 0;
@@ -63,7 +64,7 @@ public class painel extends javax.swing.JFrame {
         jSaida1 = new javax.swing.JPanel();
         lbSaidaCarro1 = new javax.swing.JLabel();
         lbPlacaSaida1 = new javax.swing.JLabel();
-        txSaidaPlaca1 = new javax.swing.JTextField();
+        txSaidaPlacaMoto = new javax.swing.JTextField();
         btnSaidaCancelarMoto = new javax.swing.JButton();
         btnSaidaVeiculoMoto = new javax.swing.JButton();
         jSeparator9 = new javax.swing.JSeparator();
@@ -71,7 +72,7 @@ public class painel extends javax.swing.JFrame {
         jSaida2 = new javax.swing.JPanel();
         lbSaidaCarro2 = new javax.swing.JLabel();
         lbPlacaSaida2 = new javax.swing.JLabel();
-        txSaidaPlaca2 = new javax.swing.JTextField();
+        txSaidaPlacaEspecial = new javax.swing.JTextField();
         btnSaidaCancelarEspecial = new javax.swing.JButton();
         btnSaidaVeiculo2 = new javax.swing.JButton();
         jSeparator10 = new javax.swing.JSeparator();
@@ -485,7 +486,12 @@ public class painel extends javax.swing.JFrame {
         lbPlacaSaida1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lbPlacaSaida1.setText("Placa:");
 
-        txSaidaPlaca1.setText("ABC-1234");
+        txSaidaPlacaMoto.setText("ABC-1234");
+        txSaidaPlacaMoto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txSaidaPlacaMotoActionPerformed(evt);
+            }
+        });
 
         btnSaidaCancelarMoto.setText("CANCELAR");
         btnSaidaCancelarMoto.addActionListener(new java.awt.event.ActionListener() {
@@ -495,6 +501,11 @@ public class painel extends javax.swing.JFrame {
         });
 
         btnSaidaVeiculoMoto.setText("CONFIRMAR");
+        btnSaidaVeiculoMoto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaidaVeiculoMotoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jSaida1Layout = new javax.swing.GroupLayout(jSaida1);
         jSaida1.setLayout(jSaida1Layout);
@@ -512,7 +523,7 @@ public class painel extends javax.swing.JFrame {
                             .addGroup(jSaida1Layout.createSequentialGroup()
                                 .addComponent(lbPlacaSaida1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txSaidaPlaca1)))
+                                .addComponent(txSaidaPlacaMoto)))
                         .addGap(67, 67, 67))
                     .addGroup(jSaida1Layout.createSequentialGroup()
                         .addComponent(btnSaidaCancelarMoto, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -530,7 +541,7 @@ public class painel extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jSaida1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbPlacaSaida1)
-                    .addComponent(txSaidaPlaca1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txSaidaPlacaMoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jSaida1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSaidaCancelarMoto)
@@ -561,7 +572,7 @@ public class painel extends javax.swing.JFrame {
         lbPlacaSaida2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lbPlacaSaida2.setText("Placa:");
 
-        txSaidaPlaca2.setText("ABC-1234");
+        txSaidaPlacaEspecial.setText("ABC-1234");
 
         btnSaidaCancelarEspecial.setText("CANCELAR");
         btnSaidaCancelarEspecial.addActionListener(new java.awt.event.ActionListener() {
@@ -571,6 +582,11 @@ public class painel extends javax.swing.JFrame {
         });
 
         btnSaidaVeiculo2.setText("CONFIRMAR");
+        btnSaidaVeiculo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaidaVeiculo2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jSaida2Layout = new javax.swing.GroupLayout(jSaida2);
         jSaida2.setLayout(jSaida2Layout);
@@ -588,7 +604,7 @@ public class painel extends javax.swing.JFrame {
                             .addGroup(jSaida2Layout.createSequentialGroup()
                                 .addComponent(lbPlacaSaida2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txSaidaPlaca2)))
+                                .addComponent(txSaidaPlacaEspecial)))
                         .addGap(67, 67, 67))
                     .addGroup(jSaida2Layout.createSequentialGroup()
                         .addComponent(btnSaidaCancelarEspecial, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -606,7 +622,7 @@ public class painel extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jSaida2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbPlacaSaida2)
-                    .addComponent(txSaidaPlaca2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txSaidaPlacaEspecial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jSaida2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSaidaCancelarEspecial)
@@ -1021,12 +1037,12 @@ public class painel extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaidaCancelarActionPerformed
 
     private void btnEntradaConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntradaConfirmarActionPerformed
-        vagasEstacionamentoCarro[QtdVagaCarro][0] = "Ocupado";
-        vagasEstacionamentoCarro[QtdVagaCarro][1] = txEntradaPlacaCarro.getText();
+        String placa = txEntradaPlacaCarro.getText();
+        vagaCarro.add(placa);
         JOptionPane.showMessageDialog(null, "Vaga de carro reservada com sucesso!");
         QtdVagaCarro++;
         dEntradaCarro.setVisible(false);
-        txEntradaPlacaCarro.setText("ABC-1234");
+        txEntradaPlacaCarro.setText(null);
     }//GEN-LAST:event_btnEntradaConfirmarActionPerformed
 
     private void btnEntradaEspecialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntradaEspecialActionPerformed
@@ -1082,12 +1098,12 @@ public class painel extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEntradaCancelar1ActionPerformed
 
     private void btnEntradaConfirmarMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntradaConfirmarMotoActionPerformed
-        vagasEstacionamentoMoto[QtdVagaMoto][0] = "Ocupado";
-        vagasEstacionamentoMoto[QtdVagaMoto][1] = txEntradaPlacaMoto.getText();
+        String placa = txEntradaPlacaMoto.getText();
+        vagaMoto.add(placa);
         JOptionPane.showMessageDialog(null, "Vaga de moto reservada com sucesso!");
         QtdVagaMoto++;
         dEntradaMoto.setVisible(false);
-        txEntradaPlacaMoto.setText("ABC-1234");
+        txEntradaPlacaMoto.setText(null);
     }//GEN-LAST:event_btnEntradaConfirmarMotoActionPerformed
 
     private void btnEntradaCancelarEspecialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntradaCancelarEspecialActionPerformed
@@ -1095,28 +1111,88 @@ public class painel extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEntradaCancelarEspecialActionPerformed
 
     private void btnEntradaConfirmarEspecialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntradaConfirmarEspecialActionPerformed
-        vagasEstacionamentoEspecial[QtdVagaEspecial][0] = "Ocupado";
-        vagasEstacionamentoEspecial[QtdVagaEspecial][1] = txEntradaPlacaEspecial.getText();
+        String placa = txEntradaPlacaEspecial.getText();
+        vagaEspecial.add(placa);
         JOptionPane.showMessageDialog(null, "Vaga especial reservada com sucesso!");
         QtdVagaEspecial++;
         dEntradaEspecial.setVisible(false);
-        txEntradaPlacaEspecial.setText("ABC-1234");
+        txEntradaPlacaEspecial.setText(null);
     }//GEN-LAST:event_btnEntradaConfirmarEspecialActionPerformed
 
     private void btnSaidaCancelarMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaidaCancelarMotoActionPerformed
-      dSaidaMoto.setVisible(false);
+        dSaidaMoto.setVisible(false);
     }//GEN-LAST:event_btnSaidaCancelarMotoActionPerformed
 
     private void btnSaidaCancelarEspecialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaidaCancelarEspecialActionPerformed
-      dSaidaEspecial.setVisible(false);
+        dSaidaEspecial.setVisible(false);
     }//GEN-LAST:event_btnSaidaCancelarEspecialActionPerformed
 
     private void btnSaidaVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaidaVeiculoActionPerformed
-
         String placa = txSaidaPlacaCarro.getText();
-        
-        
+        boolean remover = false;
+        for (String busca : vagaCarro) {
+            if (busca.matches(placa)) {
+                remover = true;
+            }
+        }
+        if (remover == true) {
+            JOptionPane.showMessageDialog(null, "Saida realizada com sucesso do veículo placa " + placa);
+            vagaCarro.remove(placa);
+            QtdVagaCarro--;
+            txSaidaPlacaCarro.setText(null);
+        } else {
+            JOptionPane.showMessageDialog(null, "Não encontramos o carro da placa " + placa + " estacionado!");
+        }
+        if (QtdVagaCarro == 0){
+        dSaidaCarro.setVisible(false);
+        }
     }//GEN-LAST:event_btnSaidaVeiculoActionPerformed
+
+    private void txSaidaPlacaMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txSaidaPlacaMotoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txSaidaPlacaMotoActionPerformed
+
+    private void btnSaidaVeiculoMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaidaVeiculoMotoActionPerformed
+         String placa = txSaidaPlacaMoto.getText();
+        boolean remover = false;
+        for (String busca : vagaMoto) {
+            if (busca.matches(placa)) {
+                remover = true;
+            }
+        }
+        if (remover == true) {
+            JOptionPane.showMessageDialog(null, "Saida realizada com sucesso da moto placa " + placa);
+            vagaMoto.remove(placa);
+            QtdVagaMoto--;
+            txSaidaPlacaMoto.setText(null);
+        } else {
+            JOptionPane.showMessageDialog(null, "Não encontramos a moto da placa " + placa + " estacionado!");
+        }
+        if (QtdVagaMoto == 0){
+        dSaidaMoto.setVisible(false);
+        }
+    }//GEN-LAST:event_btnSaidaVeiculoMotoActionPerformed
+
+    private void btnSaidaVeiculo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaidaVeiculo2ActionPerformed
+        String placa = txSaidaPlacaEspecial.getText();
+        boolean remover = false;
+        for (String busca : vagaEspecial) {
+            if (busca.matches(placa)) {
+                remover = true;
+            }
+        }
+        if (remover == true) {
+            JOptionPane.showMessageDialog(null, "Saida realizada com sucesso do veículo especial placa " + placa);
+            vagaEspecial.remove(placa);
+            QtdVagaEspecial--;
+            txSaidaPlacaEspecial.setText(null);
+        } else {
+            JOptionPane.showMessageDialog(null, "Não encontramos o carro especial da placa " + placa + " estacionado!");
+        }
+        if (QtdVagaEspecial == 0){
+        dSaidaEspecial.setVisible(false);
+        }
+    }//GEN-LAST:event_btnSaidaVeiculo2ActionPerformed
 
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc="Estilo das Janelas - Windowns">
@@ -1225,8 +1301,8 @@ public class painel extends javax.swing.JFrame {
     private javax.swing.JTextField txEntradaPlacaCarro;
     private javax.swing.JTextField txEntradaPlacaEspecial;
     private javax.swing.JTextField txEntradaPlacaMoto;
-    private javax.swing.JTextField txSaidaPlaca1;
-    private javax.swing.JTextField txSaidaPlaca2;
     private javax.swing.JTextField txSaidaPlacaCarro;
+    private javax.swing.JTextField txSaidaPlacaEspecial;
+    private javax.swing.JTextField txSaidaPlacaMoto;
     // End of variables declaration//GEN-END:variables
 }
