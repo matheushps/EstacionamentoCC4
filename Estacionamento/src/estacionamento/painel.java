@@ -9,7 +9,6 @@ public class painel extends javax.swing.JFrame {
     ArrayList<String> vagaCarro = new ArrayList<>();
     ArrayList<String> vagaMoto = new ArrayList<>();
     ArrayList<String> vagaEspecial = new ArrayList<>();
-
     int QtdVagaCarro = 0;
     int QtdVagaMoto = 0;
     int QtdVagaEspecial = 0;
@@ -23,11 +22,6 @@ public class painel extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPavimento1 = new javax.swing.JPanel();
-        jLabel29 = new javax.swing.JLabel();
-        jImagem2 = new javax.swing.JLabel();
-        jButton18 = new javax.swing.JButton();
-        jSeparator6 = new javax.swing.JSeparator();
         dEntradaCarro = new javax.swing.JDialog();
         jEntradaCarro = new javax.swing.JPanel();
         lbEntradaCarro = new javax.swing.JLabel();
@@ -85,6 +79,13 @@ public class painel extends javax.swing.JFrame {
         opPavimento3 = new javax.swing.JRadioButton();
         btnConfirmarPavimento = new javax.swing.JButton();
         btnCancelarPavimento = new javax.swing.JButton();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        dPavimento1 = new javax.swing.JDialog();
+        jPavimento1 = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
+        jImagem2 = new javax.swing.JLabel();
+        btnVoltarPavimento1 = new javax.swing.JButton();
+        jSeparator6 = new javax.swing.JSeparator();
         jInicial = new javax.swing.JPanel();
         btnMapa = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -107,55 +108,6 @@ public class painel extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         btnSaidaEspecial = new javax.swing.JButton();
         btnSaidaMoto = new javax.swing.JButton();
-
-        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel29.setText("EstácioNEY - Controle a entrada e saida de veículos em seu estacionamento");
-
-        jImagem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/estacionamento/icon-estacionamento-infra.png"))); // NOI18N
-        jImagem2.setText("jImagem");
-        jImagem2.setToolTipText("");
-        jImagem2.setMaximumSize(new java.awt.Dimension(245, 300));
-        jImagem2.setMinimumSize(new java.awt.Dimension(245, 10));
-
-        jButton18.setText("Voltar");
-
-        javax.swing.GroupLayout jPavimento1Layout = new javax.swing.GroupLayout(jPavimento1);
-        jPavimento1.setLayout(jPavimento1Layout);
-        jPavimento1Layout.setHorizontalGroup(
-            jPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPavimento1Layout.createSequentialGroup()
-                .addContainerGap(571, Short.MAX_VALUE)
-                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPavimento1Layout.createSequentialGroup()
-                    .addGap(10, 10, 10)
-                    .addGroup(jPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPavimento1Layout.createSequentialGroup()
-                            .addGap(136, 136, 136)
-                            .addComponent(jImagem2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPavimento1Layout.createSequentialGroup()
-                            .addGap(42, 42, 42)
-                            .addComponent(jLabel29))
-                        .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(50, Short.MAX_VALUE)))
-        );
-        jPavimento1Layout.setVerticalGroup(
-            jPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPavimento1Layout.createSequentialGroup()
-                .addContainerGap(464, Short.MAX_VALUE)
-                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPavimento1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jImagem2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(13, 13, 13)
-                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(356, Short.MAX_VALUE)))
-        );
 
         dEntradaCarro.setTitle("Entrada de novo veiculo");
         dEntradaCarro.setResizable(false);
@@ -651,9 +603,17 @@ public class painel extends javax.swing.JFrame {
         lbEscolherAndar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lbEscolherAndar.setText("ESCOLHA O ANDAR PARA VISUALIZAR O MAPA:");
 
+        buttonGroup1.add(opPavimento1);
         opPavimento1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        opPavimento1.setSelected(true);
         opPavimento1.setText("1º Pavimento");
+        opPavimento1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opPavimento1ActionPerformed(evt);
+            }
+        });
 
+        buttonGroup1.add(opPavimento2);
         opPavimento2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         opPavimento2.setText("2º Pavimento");
         opPavimento2.addActionListener(new java.awt.event.ActionListener() {
@@ -662,6 +622,7 @@ public class painel extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(opPavimento3);
         opPavimento3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         opPavimento3.setText("3º Pavimento");
         opPavimento3.addActionListener(new java.awt.event.ActionListener() {
@@ -671,6 +632,11 @@ public class painel extends javax.swing.JFrame {
         });
 
         btnConfirmarPavimento.setText("CONFIRMAR");
+        btnConfirmarPavimento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmarPavimentoActionPerformed(evt);
+            }
+        });
 
         btnCancelarPavimento.setText("CANCELAR");
         btnCancelarPavimento.addActionListener(new java.awt.event.ActionListener() {
@@ -738,6 +704,79 @@ public class painel extends javax.swing.JFrame {
                 .addGroup(dMapaLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jMapa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        dPavimento1.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        dPavimento1.setTitle("Escolha o pavimento");
+        dPavimento1.setResizable(false);
+
+        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel29.setText("EstácioNEY - Controle de ENTRADAS e SAIDAS de VEÍCULOS");
+
+        jImagem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/estacionamento/icon-estacionamento-infra.png"))); // NOI18N
+        jImagem2.setText("jImagem");
+        jImagem2.setToolTipText("");
+        jImagem2.setMaximumSize(new java.awt.Dimension(245, 300));
+        jImagem2.setMinimumSize(new java.awt.Dimension(245, 10));
+
+        btnVoltarPavimento1.setText("Voltar");
+        btnVoltarPavimento1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarPavimento1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPavimento1Layout = new javax.swing.GroupLayout(jPavimento1);
+        jPavimento1.setLayout(jPavimento1Layout);
+        jPavimento1Layout.setHorizontalGroup(
+            jPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPavimento1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPavimento1Layout.createSequentialGroup()
+                        .addGap(0, 561, Short.MAX_VALUE)
+                        .addComponent(btnVoltarPavimento1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPavimento1Layout.createSequentialGroup()
+                        .addGroup(jPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel29)
+                            .addComponent(jImagem2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
+        );
+        jPavimento1Layout.setVerticalGroup(
+            jPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPavimento1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jImagem2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 320, Short.MAX_VALUE)
+                .addComponent(btnVoltarPavimento1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout dPavimento1Layout = new javax.swing.GroupLayout(dPavimento1.getContentPane());
+        dPavimento1.getContentPane().setLayout(dPavimento1Layout);
+        dPavimento1Layout.setHorizontalGroup(
+            dPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(dPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(dPavimento1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPavimento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        dPavimento1Layout.setVerticalGroup(
+            dPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(dPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(dPavimento1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPavimento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -1009,14 +1048,6 @@ public class painel extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnEntradaCarroActionPerformed
 
-    private void opPavimento3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opPavimento3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opPavimento3ActionPerformed
-
-    private void opPavimento2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opPavimento2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opPavimento2ActionPerformed
-
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         if ((QtdVagaMoto > 0) || (QtdVagaCarro > 0) || (QtdVagaEspecial) > 0) {
             JOptionPane.showMessageDialog(null, "Dados apagados da memória.");
@@ -1143,8 +1174,8 @@ public class painel extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Não encontramos o carro da placa " + placa + " estacionado!");
         }
-        if (QtdVagaCarro == 0){
-        dSaidaCarro.setVisible(false);
+        if (QtdVagaCarro == 0) {
+            dSaidaCarro.setVisible(false);
         }
     }//GEN-LAST:event_btnSaidaVeiculoActionPerformed
 
@@ -1153,7 +1184,7 @@ public class painel extends javax.swing.JFrame {
     }//GEN-LAST:event_txSaidaPlacaMotoActionPerformed
 
     private void btnSaidaVeiculoMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaidaVeiculoMotoActionPerformed
-         String placa = txSaidaPlacaMoto.getText();
+        String placa = txSaidaPlacaMoto.getText();
         boolean remover = false;
         for (String busca : vagaMoto) {
             if (busca.matches(placa)) {
@@ -1168,8 +1199,8 @@ public class painel extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Não encontramos a moto da placa " + placa + " estacionado!");
         }
-        if (QtdVagaMoto == 0){
-        dSaidaMoto.setVisible(false);
+        if (QtdVagaMoto == 0) {
+            dSaidaMoto.setVisible(false);
         }
     }//GEN-LAST:event_btnSaidaVeiculoMotoActionPerformed
 
@@ -1189,10 +1220,37 @@ public class painel extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Não encontramos o carro especial da placa " + placa + " estacionado!");
         }
-        if (QtdVagaEspecial == 0){
-        dSaidaEspecial.setVisible(false);
+        if (QtdVagaEspecial == 0) {
+            dSaidaEspecial.setVisible(false);
         }
     }//GEN-LAST:event_btnSaidaVeiculo2ActionPerformed
+
+    private void opPavimento3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opPavimento3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_opPavimento3ActionPerformed
+
+    private void opPavimento2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opPavimento2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_opPavimento2ActionPerformed
+
+    private void opPavimento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opPavimento1ActionPerformed
+
+    }//GEN-LAST:event_opPavimento1ActionPerformed
+
+    private void btnVoltarPavimento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarPavimento1ActionPerformed
+        dPavimento1.setVisible(false);
+    }//GEN-LAST:event_btnVoltarPavimento1ActionPerformed
+
+    private void btnConfirmarPavimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarPavimentoActionPerformed
+       if(opPavimento1.isSelected()){
+        dMapa.setVisible(false);
+        dPavimento1.setLocationRelativeTo(null);
+        dPavimento1.setVisible(true);
+        Dimension d = new Dimension();
+        d.setSize(800, 600);
+        dPavimento1.setMinimumSize(d);
+       }
+    }//GEN-LAST:event_btnConfirmarPavimentoActionPerformed
 
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc="Estilo das Janelas - Windowns">
@@ -1242,14 +1300,16 @@ public class painel extends javax.swing.JFrame {
     private javax.swing.JButton btnSaidaVeiculo2;
     private javax.swing.JButton btnSaidaVeiculoMoto;
     private javax.swing.JButton btnSair;
+    private javax.swing.JButton btnVoltarPavimento1;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JDialog dEntradaCarro;
     private javax.swing.JDialog dEntradaEspecial;
     private javax.swing.JDialog dEntradaMoto;
     private javax.swing.JDialog dMapa;
+    private javax.swing.JDialog dPavimento1;
     private javax.swing.JDialog dSaidaCarro;
     private javax.swing.JDialog dSaidaEspecial;
     private javax.swing.JDialog dSaidaMoto;
-    private javax.swing.JButton jButton18;
     private javax.swing.JPanel jEntradaCarro;
     private javax.swing.JPanel jEntradaEspecial;
     private javax.swing.JPanel jEntradaMoto;
