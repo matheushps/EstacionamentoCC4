@@ -13,6 +13,7 @@ public class painel extends javax.swing.JFrame {
     int QtdVagaCarro = 0;
     int QtdVagaMoto = 0;
     int QtdVagaEspecial = 0;
+    String imprimir = "";
 
     public painel() {
         initComponents();
@@ -87,6 +88,8 @@ public class painel extends javax.swing.JFrame {
         jImagem2 = new javax.swing.JLabel();
         btnVoltarPavimento1 = new javax.swing.JButton();
         jSeparator6 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        placasPavimento1 = new javax.swing.JTextArea();
         dPavimento2 = new javax.swing.JDialog();
         jPavimento2 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
@@ -741,6 +744,10 @@ public class painel extends javax.swing.JFrame {
             }
         });
 
+        placasPavimento1.setColumns(20);
+        placasPavimento1.setRows(5);
+        jScrollPane1.setViewportView(placasPavimento1);
+
         javax.swing.GroupLayout jPavimento1Layout = new javax.swing.GroupLayout(jPavimento1);
         jPavimento1.setLayout(jPavimento1Layout);
         jPavimento1Layout.setHorizontalGroup(
@@ -749,14 +756,15 @@ public class painel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPavimento1Layout.createSequentialGroup()
-                        .addGroup(jPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel29)
-                            .addComponent(jImagem2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 361, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPavimento1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnVoltarPavimento1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnVoltarPavimento1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPavimento1Layout.createSequentialGroup()
+                        .addGroup(jPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel29)
+                            .addComponent(jImagem2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 205, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPavimento1Layout.setVerticalGroup(
@@ -768,7 +776,9 @@ public class painel extends javax.swing.JFrame {
                 .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 313, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addComponent(btnVoltarPavimento1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -1421,30 +1431,34 @@ public class painel extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVoltarPavimento1ActionPerformed
 
     private void btnConfirmarPavimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarPavimentoActionPerformed
-       if(opPavimento1.isSelected()){
-        dMapa.setVisible(false);
-        dPavimento1.setLocationRelativeTo(null);
-        dPavimento1.setVisible(true);
-        Dimension d = new Dimension();
-        d.setSize(800, 600);
-        dPavimento1.setMinimumSize(d);
-       }
-       if(opPavimento2.isSelected()){
-        dMapa.setVisible(false);
-        dPavimento1.setLocationRelativeTo(null);
-        dPavimento1.setVisible(true);
-        Dimension d = new Dimension();
-        d.setSize(800, 600);
-        dPavimento1.setMinimumSize(d);
-       }
-       if(opPavimento3.isSelected()){
-        dMapa.setVisible(false);
-        dPavimento1.setLocationRelativeTo(null);
-        dPavimento1.setVisible(true);
-        Dimension d = new Dimension();
-        d.setSize(800, 600);
-        dPavimento1.setMinimumSize(d);
-       }
+        if (opPavimento1.isSelected()) {
+            dMapa.setVisible(false);
+            dPavimento1.setLocationRelativeTo(null);
+            dPavimento1.setVisible(true);
+            Dimension d = new Dimension();
+            d.setSize(800, 600);
+            dPavimento1.setMinimumSize(d);
+            for (String carro : vagaCarro) {
+               imprimir += carro;
+            }
+             placasPavimento1.setText(imprimir);
+        }
+        if (opPavimento2.isSelected()) {
+            dMapa.setVisible(false);
+            dPavimento1.setLocationRelativeTo(null);
+            dPavimento1.setVisible(true);
+            Dimension d = new Dimension();
+            d.setSize(800, 600);
+            dPavimento1.setMinimumSize(d);
+        }
+        if (opPavimento3.isSelected()) {
+            dMapa.setVisible(false);
+            dPavimento1.setLocationRelativeTo(null);
+            dPavimento1.setVisible(true);
+            Dimension d = new Dimension();
+            d.setSize(800, 600);
+            dPavimento1.setMinimumSize(d);
+        }
     }//GEN-LAST:event_btnConfirmarPavimentoActionPerformed
 
     private void btnVoltarPavimento2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarPavimento2ActionPerformed
@@ -1547,6 +1561,7 @@ public class painel extends javax.swing.JFrame {
     private javax.swing.JPanel jSaida;
     private javax.swing.JPanel jSaida1;
     private javax.swing.JPanel jSaida2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -1574,6 +1589,7 @@ public class painel extends javax.swing.JFrame {
     private javax.swing.JRadioButton opPavimento1;
     private javax.swing.JRadioButton opPavimento2;
     private javax.swing.JRadioButton opPavimento3;
+    private javax.swing.JTextArea placasPavimento1;
     private javax.swing.JTextField txEntradaPlacaCarro;
     private javax.swing.JTextField txEntradaPlacaEspecial;
     private javax.swing.JTextField txEntradaPlacaMoto;
