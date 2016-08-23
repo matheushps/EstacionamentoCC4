@@ -1,14 +1,15 @@
 package estacionamento;
 
 import java.awt.Dimension;
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 import javax.swing.JOptionPane;
 
 public class painel extends javax.swing.JFrame {
 
-    ArrayList<String> vagaCarro = new ArrayList<>();
-    ArrayList<String> vagaMoto = new ArrayList<>();
-    ArrayList<String> vagaEspecial = new ArrayList<>();
+    Set<String> vagaCarro = new HashSet<>();
+    Set<String> vagaMoto = new HashSet<>();
+    Set<String> vagaEspecial = new HashSet<>();
     int QtdVagaCarro = 0;
     int QtdVagaMoto = 0;
     int QtdVagaEspecial = 0;
@@ -86,6 +87,19 @@ public class painel extends javax.swing.JFrame {
         jImagem2 = new javax.swing.JLabel();
         btnVoltarPavimento1 = new javax.swing.JButton();
         jSeparator6 = new javax.swing.JSeparator();
+        dPavimento2 = new javax.swing.JDialog();
+        jPavimento2 = new javax.swing.JPanel();
+        jLabel30 = new javax.swing.JLabel();
+        jImagem3 = new javax.swing.JLabel();
+        btnVoltarPavimento2 = new javax.swing.JButton();
+        jSeparator11 = new javax.swing.JSeparator();
+        dPavimento3 = new javax.swing.JDialog();
+        jPavimento3 = new javax.swing.JPanel();
+        jLabel31 = new javax.swing.JLabel();
+        jImagem4 = new javax.swing.JLabel();
+        btnVoltarPavimento3 = new javax.swing.JButton();
+        jSeparator12 = new javax.swing.JSeparator();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
         jInicial = new javax.swing.JPanel();
         btnMapa = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -734,15 +748,15 @@ public class painel extends javax.swing.JFrame {
             .addGroup(jPavimento1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPavimento1Layout.createSequentialGroup()
-                        .addGap(0, 561, Short.MAX_VALUE)
-                        .addComponent(btnVoltarPavimento1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPavimento1Layout.createSequentialGroup()
                         .addGroup(jPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel29)
                             .addComponent(jImagem2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(0, 361, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPavimento1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnVoltarPavimento1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPavimento1Layout.setVerticalGroup(
@@ -754,7 +768,7 @@ public class painel extends javax.swing.JFrame {
                 .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 320, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 313, Short.MAX_VALUE)
                 .addComponent(btnVoltarPavimento1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -763,20 +777,161 @@ public class painel extends javax.swing.JFrame {
         dPavimento1.getContentPane().setLayout(dPavimento1Layout);
         dPavimento1Layout.setHorizontalGroup(
             dPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-            .addGroup(dPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(dPavimento1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPavimento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dPavimento1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPavimento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         dPavimento1Layout.setVerticalGroup(
             dPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dPavimento1Layout.createSequentialGroup()
+                .addGap(0, 63, Short.MAX_VALUE)
+                .addComponent(jPavimento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        dPavimento2.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        dPavimento2.setTitle("Escolha o pavimento");
+        dPavimento2.setResizable(false);
+
+        jLabel30.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel30.setText("EstácioNEY - Controle de ENTRADAS e SAIDAS de VEÍCULOS");
+
+        jImagem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/estacionamento/icon-estacionamento-infra.png"))); // NOI18N
+        jImagem3.setText("jImagem");
+        jImagem3.setToolTipText("");
+        jImagem3.setMaximumSize(new java.awt.Dimension(245, 300));
+        jImagem3.setMinimumSize(new java.awt.Dimension(245, 10));
+
+        btnVoltarPavimento2.setText("Voltar");
+        btnVoltarPavimento2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarPavimento2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPavimento2Layout = new javax.swing.GroupLayout(jPavimento2);
+        jPavimento2.setLayout(jPavimento2Layout);
+        jPavimento2Layout.setHorizontalGroup(
+            jPavimento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPavimento2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPavimento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPavimento2Layout.createSequentialGroup()
+                        .addGap(0, 561, Short.MAX_VALUE)
+                        .addComponent(btnVoltarPavimento2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPavimento2Layout.createSequentialGroup()
+                        .addGroup(jPavimento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel30)
+                            .addComponent(jImagem3, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jSeparator11, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
+        );
+        jPavimento2Layout.setVerticalGroup(
+            jPavimento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPavimento2Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jImagem3, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 320, Short.MAX_VALUE)
+                .addComponent(btnVoltarPavimento2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout dPavimento2Layout = new javax.swing.GroupLayout(dPavimento2.getContentPane());
+        dPavimento2.getContentPane().setLayout(dPavimento2Layout);
+        dPavimento2Layout.setHorizontalGroup(
+            dPavimento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
-            .addGroup(dPavimento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(dPavimento1Layout.createSequentialGroup()
+            .addGroup(dPavimento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(dPavimento2Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPavimento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPavimento2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        dPavimento2Layout.setVerticalGroup(
+            dPavimento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(dPavimento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(dPavimento2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPavimento2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        dPavimento3.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        dPavimento3.setTitle("Escolha o pavimento");
+        dPavimento3.setResizable(false);
+
+        jLabel31.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel31.setText("EstácioNEY - Controle de ENTRADAS e SAIDAS de VEÍCULOS");
+
+        jImagem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/estacionamento/icon-estacionamento-infra.png"))); // NOI18N
+        jImagem4.setText("jImagem");
+        jImagem4.setToolTipText("");
+        jImagem4.setMaximumSize(new java.awt.Dimension(245, 300));
+        jImagem4.setMinimumSize(new java.awt.Dimension(245, 10));
+
+        btnVoltarPavimento3.setText("Voltar");
+        btnVoltarPavimento3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarPavimento3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPavimento3Layout = new javax.swing.GroupLayout(jPavimento3);
+        jPavimento3.setLayout(jPavimento3Layout);
+        jPavimento3Layout.setHorizontalGroup(
+            jPavimento3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPavimento3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPavimento3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPavimento3Layout.createSequentialGroup()
+                        .addGap(0, 561, Short.MAX_VALUE)
+                        .addComponent(btnVoltarPavimento3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPavimento3Layout.createSequentialGroup()
+                        .addGroup(jPavimento3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel31)
+                            .addComponent(jImagem4, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jSeparator12, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
+        );
+        jPavimento3Layout.setVerticalGroup(
+            jPavimento3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPavimento3Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jImagem4, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 320, Short.MAX_VALUE)
+                .addComponent(btnVoltarPavimento3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout dPavimento3Layout = new javax.swing.GroupLayout(dPavimento3.getContentPane());
+        dPavimento3.getContentPane().setLayout(dPavimento3Layout);
+        dPavimento3Layout.setHorizontalGroup(
+            dPavimento3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(dPavimento3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(dPavimento3Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPavimento3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        dPavimento3Layout.setVerticalGroup(
+            dPavimento3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(dPavimento3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(dPavimento3Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPavimento3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -784,6 +939,8 @@ public class painel extends javax.swing.JFrame {
         setTitle("Projeto EstacioNEY - v0.001");
         setUndecorated(true);
         setResizable(false);
+
+        jInternalFrame1.setVisible(true);
 
         btnMapa.setText("ABRIR MAPA");
         btnMapa.addActionListener(new java.awt.event.ActionListener() {
@@ -998,15 +1155,36 @@ public class painel extends javax.swing.JFrame {
 
         jImagem.getAccessibleContext().setAccessibleName("");
 
+        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
+        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
+        jInternalFrame1Layout.setHorizontalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jInicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jInternalFrame1Layout.setVerticalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jInicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jInicial, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jInicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -1016,6 +1194,7 @@ public class painel extends javax.swing.JFrame {
         if ((QtdVagaMoto == 0) && (QtdVagaCarro == 0) && (QtdVagaEspecial) == 0) {
             JOptionPane.showMessageDialog(null, "É necessário ao menos um veículo estacionado para inicializar o mapa.");
         } else {
+            dMapa.setLocationRelativeTo(null);
             dMapa.setVisible(true);
             Dimension d = new Dimension();
             d.setSize(400, 200);
@@ -1250,7 +1429,31 @@ public class painel extends javax.swing.JFrame {
         d.setSize(800, 600);
         dPavimento1.setMinimumSize(d);
        }
+       if(opPavimento2.isSelected()){
+        dMapa.setVisible(false);
+        dPavimento1.setLocationRelativeTo(null);
+        dPavimento1.setVisible(true);
+        Dimension d = new Dimension();
+        d.setSize(800, 600);
+        dPavimento1.setMinimumSize(d);
+       }
+       if(opPavimento3.isSelected()){
+        dMapa.setVisible(false);
+        dPavimento1.setLocationRelativeTo(null);
+        dPavimento1.setVisible(true);
+        Dimension d = new Dimension();
+        d.setSize(800, 600);
+        dPavimento1.setMinimumSize(d);
+       }
     }//GEN-LAST:event_btnConfirmarPavimentoActionPerformed
+
+    private void btnVoltarPavimento2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarPavimento2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVoltarPavimento2ActionPerformed
+
+    private void btnVoltarPavimento3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarPavimento3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVoltarPavimento3ActionPerformed
 
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc="Estilo das Janelas - Windowns">
@@ -1301,12 +1504,16 @@ public class painel extends javax.swing.JFrame {
     private javax.swing.JButton btnSaidaVeiculoMoto;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnVoltarPavimento1;
+    private javax.swing.JButton btnVoltarPavimento2;
+    private javax.swing.JButton btnVoltarPavimento3;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JDialog dEntradaCarro;
     private javax.swing.JDialog dEntradaEspecial;
     private javax.swing.JDialog dEntradaMoto;
     private javax.swing.JDialog dMapa;
     private javax.swing.JDialog dPavimento1;
+    private javax.swing.JDialog dPavimento2;
+    private javax.swing.JDialog dPavimento3;
     private javax.swing.JDialog dSaidaCarro;
     private javax.swing.JDialog dSaidaEspecial;
     private javax.swing.JDialog dSaidaMoto;
@@ -1315,7 +1522,10 @@ public class painel extends javax.swing.JFrame {
     private javax.swing.JPanel jEntradaMoto;
     private javax.swing.JLabel jImagem;
     private javax.swing.JLabel jImagem2;
+    private javax.swing.JLabel jImagem3;
+    private javax.swing.JLabel jImagem4;
     private javax.swing.JPanel jInicial;
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1324,17 +1534,23 @@ public class painel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jMapa;
     private javax.swing.JPanel jPavimento1;
+    private javax.swing.JPanel jPavimento2;
+    private javax.swing.JPanel jPavimento3;
     private javax.swing.JPanel jSaida;
     private javax.swing.JPanel jSaida1;
     private javax.swing.JPanel jSaida2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
